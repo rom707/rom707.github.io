@@ -12,7 +12,7 @@ if ('Notification' in window) {
   messaging.onMessage(function(payload) {
     console.log('Message received. ', payload);
 
-    navigator.serviceWorker.register('https://cc16cb31.ngrok.io/messaging-sw.js');
+    navigator.serviceWorker.register('messaging-sw.js');
 
     Notification.requestPermission(function(result) {
       if (result === 'granted') {
