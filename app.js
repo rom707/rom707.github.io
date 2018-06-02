@@ -17,7 +17,12 @@ if ('Notification' in window) {
     Notification.requestPermission(function(result) {
       if (result === 'granted') {
         navigator.serviceWorker.ready.then(function(registration) {
-          new Notification(payload.notification.title, payload.notification);
+			const options = {
+			    icon: payload.data.img,
+			    body: payload.data.url
+			  };
+
+          new Notification(payload.notification.title, options);
           // payload.notification.data = payload.notification; // параметры уведомления
           // return registration.showNotification(payload.notification.title, payload.notification);
         }).catch(function(error) {
