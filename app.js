@@ -1,3 +1,5 @@
+const serverUrl = '';
+
 const config = {
   messagingSenderId: "687255899047"
 };
@@ -52,7 +54,7 @@ function sendTokenToServer(currentToken) {
   // if (!isTokenSentToServer(currentToken)) {
     console.log('Отправка токена на сервер...');
 
-    var url = '/subscribe';
+    var url = `${serverUrl}/subscribe`;
     $.post(url, {
       token: currentToken
     });
