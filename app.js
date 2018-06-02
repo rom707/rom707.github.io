@@ -1,4 +1,4 @@
-const serverUrl = '';
+const serverUrl = 'https://cc16cb31.ngrok.io';
 
 const config = {
   messagingSenderId: "687255899047"
