@@ -9,5 +9,9 @@ firebase.initializeApp(config);
 
 const messaging = firebase.messaging();
 messaging.setBackgroundMessageHandler(function(payload) {
+  const options = {
+    icon: payload.data.img,
+    body: payload.data.url
+  };
   return self.registration.showNotification(payload.title, options);
 });
